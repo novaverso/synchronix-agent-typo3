@@ -1,0 +1,5 @@
+# cat=basic; type=string; label=Kopplungstoken: Einmal-Token aus Synchronix. Wird nach erfolgreicher Kopplung nicht mehr gebraucht und kann geleert werden.
+pairingToken =
+
+# cat=basic; type=string; label=Synchronix-Basis-URL: z. B. https://app.synchronix.io - ohne Pfad und ohne Schrägstrich am Ende.
+synchronixUrl =

@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Novaverso\SynchronixAgentTypo3\:
+        resource: '../Classes/*'
+
+    # Environment ist eine statische Utility-Klasse, kein Service - der Pfad
+    # kommt deshalb aus einer Factory. Das ist die einzige Stelle, an der der
+    # Store TYPO3 berührt, und genau das hält ihn testbar.
+    Novaverso\SynchronixAgentTypo3\Pairing\CredentialStore:
+        factory: ['Novaverso\SynchronixAgentTypo3\Pairing\CredentialStoreFactory', 'create']
+
+    # Die Middleware wird vom Middleware-Stack instanziiert, nicht von einem
+    # Controller, muss also aus dem Container erreichbar sein.
+    Novaverso\SynchronixAgentTypo3\Middleware\AgentMiddleware:
+        public: true
