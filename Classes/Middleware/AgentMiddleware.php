@@ -60,12 +60,11 @@ final class AgentMiddleware implements MiddlewareInterface
             (string) $request->getBody(),
         );
 
-        $response = new Response($result->status);
-
-        foreach ($result->headers as $name => $value) {
-            $response = $response->withHeader($name, $value);
-        }
-
+        // TYPO3's Response takes the **body** first and the status second - not
+        // the other way round. Passing the status as the first argument throws
+        // "Body must be a string stream resource identifier", which is a
+        // confusing way to learn that.
+        $response = new Response('php://temp', $result->status, $result->headers);
         $response->getBody()->write($result->body);
 
         return $response;
