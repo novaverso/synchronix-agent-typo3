@@ -5,7 +5,7 @@
     "license": "proprietary",
     "require": {
         "php": ">=8.2",
-        "novaverso/synchronix-agent-core": "@dev",
+        "novaverso/synchronix-agent-core": "^1.0",
         "typo3/cms-core": "^13.4 || ^14.0"
     },
     "autoload": {

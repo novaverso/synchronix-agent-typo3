@@ -27,7 +27,7 @@ use TYPO3\CMS\Core\Package\PackageManager;
  */
 final class AgentFactory
 {
-    public const AGENT_VERSION = '1.0.0';
+    public const AGENT_VERSION = '1.0.1';
 
     public function __construct(
         private readonly CredentialStore $credentials,
